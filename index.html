@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | Advanto</title>
+  </head>
+  <Style>
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #01bbbf;
+  --text-dark: #1d293d;
+  --text-light: #62748e;
+  --extra-light: #fafafa;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Dancing Script", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__subheader {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.section__header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.section__description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-family: "Roboto", serif;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", serif;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--extra-light);
+}
+
+.nav__logo a img {
+  max-width: 100px;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--extra-light);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav__links.open {
+  transform: translateY(100%);
+}
+
+.nav__links a {
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.nav__links .btn {
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: var(--extra-light);
+}
+
+.header__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.header__image img {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.header__content img {
+  max-width: 150px;
+  margin-inline: auto;
+  transform: rotate(-10deg);
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.header__content form {
+  margin-top: 2rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem 1rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header__content .input__group {
+  flex: 1;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.header__content label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.header__content label span {
+  color: var(--primary-color);
+}
+
+.header__content input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.header__content input::placeholder {
+  color: var(--text-dark);
+}
+
+.header__content .btn {
+  font-size: 1.2rem;
+  background-color: var(--text-dark);
+}
+
+.header__content .btn:hover {
+  background-color: var(--primary-color);
+}
+
+.about {
+  background-color: var(--extra-light);
+  overflow: hidden;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.about__image {
+  position: relative;
+  isolation: isolate;
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.about__image img {
+  border: 0.75rem solid var(--white);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.about__image::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  transform: rotate(8deg);
+  z-index: -1;
+}
+
+.about__content .section__header {
+  margin-bottom: 1rem;
+}
+
+.about__content .section__header span {
+  color: var(--primary-color);
+}
+
+.about__signature {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.tour__grid {
+  margin-block: 2rem;
+  display: grid;
+  gap: 0 1rem;
+}
+
+.tour__card {
+  padding: 2rem 1rem;
+  transition: 0.3s;
+  border-radius: 1rem;
+}
+
+.tour__card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.tour__card img {
+  max-width: 125px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  border-radius: 10rem;
+}
+
+.tour__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.tour__card p {
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tour__card:hover p {
+  color: var(--primary-color);
+}
+
+.tour__btn {
+  display: flex;
+  justify-content: center;
+}
+
+.destination {
+  background-color: var(--extra-light);
+}
+
+.destination__grid {
+  margin-block: 4rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.destination__card {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.destination__card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.destination__card img {
+  border-radius: 0.5rem;
+}
+
+.destination__card__content {
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.destination__card__content h4 {
+  position: relative;
+  isolation: isolate;
+  margin-block: -3rem 0.5rem;
+  max-width: 250px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.75rem;
+}
+
+.destination__card__content h4::before {
+  position: absolute;
+  content: "";
+  top: -1rem;
+  left: -1rem;
+  width: calc(100% + 2rem);
+  height: calc(100% + 1rem);
+  background-color: var(--white);
+  z-index: -1;
+  border-top-right-radius: 0.5rem;
+}
+
+.destination__card__content h4::after {
+  position: absolute;
+  content: "";
+  top: 1rem;
+  right: -2rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: transparent;
+  z-index: -1;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: -0.25rem 0.25rem 0 0.25rem var(--white);
+}
+
+.destination__card__content h5 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.destination__card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.destination__card__footer h6 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.destination__card__footer p {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.destination__btn {
+  display: flex;
+  justify-content: center;
+}
+
+.review__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.review__image img {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.review__content {
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.review__card > span {
+  display: inline-block;
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.review__card .section__description {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.review__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.review__card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.review__card > div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.review__card > div > span {
+  font-size: 1rem;
+  color: goldenrod;
+}
+
+.blog {
+  background-color: var(--extra-light);
+}
+
+.blog__grid {
+  margin-block: 4rem 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.blog__card {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.blog__card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog__card img {
+  border-radius: 0.5rem;
+}
+
+.blog__content {
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.blog__content h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.75rem;
+}
+
+.blog__content .btn {
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+.blog__card .btn:hover {
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+.blog__btn {
+  display: flex;
+  justify-content: center;
+}
+
+.banner {
+  overflow: hidden;
+}
+
+.banner__wrapper {
+  width: max-content;
+  display: flex;
+  align-items: center;
+
+  animation: scroll-left 45s linear infinite;
+}
+
+.banner__wrapper img {
+  max-width: 300px;
+}
+
+@keyframes scroll-left {
+  to {
+    transform: translateX(calc(-50%));
+  }
+}
+
+.footer__logo {
+  margin-bottom: 2rem;
+}
+
+.footer__logo img {
+  max-width: 150px;
+  margin-inline: auto;
+}
+
+.footer__links {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer__links a {
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.footer__links a:hover {
+  color: var(--primary-color);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer__socials a {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+.footer__socials a:hover {
+  color: var(--primary-color);
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+}
+
+@media (width > 540px) {
+  .header__content form {
+    flex-direction: row;
+  }
+
+  .tour__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  nav {
+    position: static;
+    padding: 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    width: fit-content;
+    padding: 0;
+    flex-direction: row;
+    gap: 3rem;
+    background-color: transparent;
+    transform: none !important;
+  }
+
+  .nav__links a {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav__links a:hover {
+    border-color: var(--primary-color);
+  }
+
+  .nav__links .btn {
+    color: var(--white);
+    background-color: var(--primary-color);
+  }
+
+  .header__container {
+    padding-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .header__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .header__content :is(h1, .section__description) {
+    text-align: left;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .about__content
+    :is(.section__header, .section__description, .about__signature) {
+    text-align: left;
+  }
+
+  .tour__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .review__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .review__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .review__content :is(.section__subheader, .section__header) {
+    text-align: left;
+  }
+
+  .review__content .section__header {
+    max-width: 400px;
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__links {
+    gap: 3rem;
+  }
+}
+
+@media (width > 1024px) {
+  .tour__grid {
+    gap: 1.5rem;
+  }
+
+  .destination__grid {
+    gap: 1.5rem;
+  }
+
+  .blog__grid {
+    gap: 1.5rem;
+  }
+
+  .blog__content {
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+  </Style>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="images/logo.png" alt="logo" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tour">Tours</a></li>
+        <li><a href="#contact">Contacts</a></li>
+        <li>
+          <button class="btn">
+            Plan a Trip
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="images/header.png" alt="header" />
+      </div>
+      <div class="header__content">
+        <img src="images/plane.png" alt="plane" />
+        <h1>Explore The World And Enjoy Your Trip</h1>
+        <p class="section__description">
+          Discover breathtaking destinations and create unforgettable memories
+          with Advanto. From scenic landscapes to vibrant cities, your next
+          adventure awaits. Let's make your dream trip a reality!
+        </p>
+        <form action="/">
+          <div class="input__group">
+            <label for="location">
+              <span><i class="ri-map-pin-line"></i></span> Location
+            </label>
+            <input
+              type="text"
+              name="location"
+              placeholder="Sahara Desert, Algeria"
+            />
+          </div>
+          <div class="input__group">
+            <label for="date">
+              <span><i class="ri-calendar-line"></i></span> Date
+            </label>
+            <input
+              type="text"
+              name="location"
+              placeholder="18th, December 2024"
+            />
+          </div>
+          <button class="btn">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="section__container about__container">
+        <div class="about__image">
+          <img src="images/about.jpg" alt="about" />
+        </div>
+        <div class="about__content">
+          <h2 class="section__header">
+            It's Time For a <span>New Adventure!</span> Don't Wait Any Longer.
+          </h2>
+          <p class="section__description">
+            At Advanto, we believe every journey is a story waiting to be told.
+            Whether you're seeking the tranquility of nature, the charm of
+            historic cities, or the excitement of new cultures, we're here to
+            turn your travel dreams into reality. So why wait? Pack your bags,
+            step out of your comfort zone, and let Advanto guide you to your
+            next great experience!
+          </p>
+          <div class="about__signature">Howard</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container tour__container" id="tour">
+      <h3 class="section__subheader">Tour Type</h3>
+      <h2 class="section__header">Pick A Tour Type</h2>
+      <div class="tour__grid">
+        <div class="tour__card">
+          <img src="images/tour-1.jpg" alt="tour" />
+          <h4>Forest Adventures</h4>
+          <p>15 Tours+</p>
+        </div>
+        <div class="tour__card">
+          <img src="images/tour-2.jpg" alt="tour" />
+          <h4>Mountain Climbing</h4>
+          <p>10 Tours+</p>
+        </div>
+        <div class="tour__card">
+          <img src="images/toue-3.jpg" alt="tour" />
+          <h4>Beach Vacations</h4>
+          <p>18 Tours+</p>
+        </div>
+        <div class="tour__card">
+          <img src="images/tour-4.jpg" alt="tour" />
+          <h4>City Tours</h4>
+          <p>12 Tours+</p>
+        </div>
+      </div>
+      <div class="tour__btn">
+        <button class="btn">
+          Show All
+          <span><i class="ri-arrow-right-long-line"></i></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="destination">
+      <div class="section__container destination__container">
+        <h3 class="section__subheader">Top Destination</h3>
+        <h2 class="section__header">Our Top Destinations</h2>
+        <div class="destination__grid">
+          <div class="destination__card">
+            <img src="images/destination-1.jpg" alt="destination" />
+            <div class="destination__card__content">
+              <h4>Enjoy the tour of the City of Love</h4>
+              <h5>Paris, France</h5>
+              <div class="destination__card__footer">
+                <h6>$2300</h6>
+                <p>(6 days)</p>
+              </div>
+            </div>
+          </div>
+          <div class="destination__card">
+            <img src="images/destination-2.jpg" alt="destination" />
+            <div class="destination__card__content">
+              <h4>Enjoy the tour of paradise with pristine beaches</h4>
+              <h5>Bali, Indonesia</h5>
+              <div class="destination__card__footer">
+                <h6>$1800</h6>
+                <p>(7 days)</p>
+              </div>
+            </div>
+          </div>
+          <div class="destination__card">
+            <img src="images/destination-3.jpg" alt="destination" />
+            <div class="destination__card__content">
+              <h4>Enjoy the tour of luxury and innovation</h4>
+              <h5>Dubai, UAE</h5>
+              <div class="destination__card__footer">
+                <h6>$2500</h6>
+                <p>(5 days)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="destination__btn">
+          <button class="btn">
+            Show All
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container review__container">
+      <div class="review__image">
+        <img src="images/review.png" alt="review" />
+      </div>
+      <div class="review__content">
+        <h3 class="section__subheader">Top Reviews</h3>
+        <h2 class="section__header">Our Valuable Clients Say Abour Us</h2>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="review__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p class="section__description">
+                  Advanto made my dream vacation a reality! From the moment I
+                  started planning, their team provided excellent
+                  recommendations and tailored my itinerary to perfection. Every
+                  experience felt personalized, and I loved how seamless the
+                  entire journey was.
+                </p>
+                <h4>Emily Roberts</h4>
+                <h5>Travel Blogger</h5>
+                <div>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p class="section__description">
+                  Exploring new destinations with Advanto was a game-changer. As
+                  a photographer, I'm always looking for breathtaking views and
+                  unique cultural experiences. Advanto didn't disappoint! From
+                  scenic landscapes to vibrant local markets, every destination
+                  was a delight to capture.
+                </p>
+                <h4>Michael Johnson</h4>
+                <h5>Photographer</h5>
+                <div>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review__card">
+                <span><i class="ri-double-quotes-l"></i></span>
+                <p class="section__description">
+                  I've traveled a lot for work, but Advanto gave me the
+                  opportunity to enjoy a stress-free vacation. Their attention
+                  to detail was remarkable, ensuring everything from airport
+                  transfers to guided tours was perfectly arranged. The
+                  personalized itinerary was well-balanced with adventure and
+                  relaxation!
+                </p>
+                <h4>Sophia Lee</h4>
+                <h5>Business Consultant</h5>
+                <div>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog">
+      <div class="section__container blog__container">
+        <h3 class="section__subheader">Latest News & Blogs</h3>
+        <h2 class="section__header">Our Latest News & Blogs</h2>
+        <div class="blog__grid">
+          <div class="blog__card">
+            <img src="images/blog-1.jpg" alt="blog" />
+            <div class="blog__content">
+              <h4>Top 10 Must-Visit Destinations for Your Next Adventure</h4>
+              <button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button>
+            </div>
+          </div>
+          <div class="blog__card">
+            <img src="images/blog-2.jpg" alt="blog" />
+            <div class="blog__content">
+              <h4>Travel Smart: Essential Tips for Stress-Free Vacations</h4>
+              <button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button>
+            </div>
+          </div>
+          <div class="blog__card">
+            <img src="images/blog-3.jpg" alt="blog" />
+            <div class="blog__content">
+              <h4>
+                Hidden Gems: Discover Offbeat Locations for Unique Experience
+              </h4>
+              <button class="btn">
+                Read More
+                <span><i class="ri-arrow-right-long-line"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="blog__btn">
+          <button class="btn">
+            Show All
+            <span><i class="ri-arrow-right-long-line"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="banner__wrapper">
+        <img src="images/banner-1.jpg" alt="banner" />
+        <img src="images/banner-2.jpg" alt="banner" />
+        <img src="images/banner-3.jpg" alt="banner" />
+        <img src="images/banner-4.jpg" alt="banner" />
+        <img src="images/banner-5.jpg" alt="banner" />
+        <img src="images/banner-6.jpg" alt="banner" />
+        <img src="images/banner-7.jpg" alt="banner" />
+        <img src="images/banner-8.jpg" alt="banner" />
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <ul class="footer__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tour">Tours</a></li>
+          <li><a href="#contact">Contacts</a></li>
+        </ul>
+        <ul class="footer__socials">
+          <li>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
+
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
+
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute(
+    "class",
+    isOpen ? "ri-close-line" : "ri-menu-3-line"
+  );
+});
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+});
+
+const scrollRevealOption = {
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".header__content h1", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".header__content .section__description", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".header__content form", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+ScrollReveal().reveal(".header__content img", {
+  ...scrollRevealOption,
+  origin: "left",
+  delay: 1500,
+});
+
+ScrollReveal().reveal(".about__content .section__header", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".about__content .section__description", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".about__signature", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+
+ScrollReveal().reveal(".tour__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+ScrollReveal().reveal(".destination__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+const swiper = new Swiper(".swiper", {
+  loop: true,
+});
+
+ScrollReveal().reveal(".blog__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
+const banner = document.querySelector(".banner__wrapper");
+const bannerImages = Array.from(banner.children);
+
+bannerImages.forEach((item) => {
+  const duplicateNode = item.cloneNode(true);
+  duplicateNode.setAttribute("aria-hidden", true);
+  banner.appendChild(duplicateNode);
+});
+    </script>
+  </body>
+</html>
